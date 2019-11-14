@@ -15,7 +15,7 @@ int main(void)
 
 	printf("input type\n");
 	printf(" n : normal sudoku, c : sudoku with sign of inequality, x : sudoku X \n");
-	printf("-----------------------------------------------------------------------\n")
+	printf("-----------------------------------------------------------------------\n");
 	scanf("%c", &t);
 	printf("input level(1~10)\n");
 	scanf("%d", &l);
