@@ -5,10 +5,13 @@
 
 void nframe1(void);
 void nframe2(void);
+
 void cframe1(void);
 void cframe2(void);
+
 void xframe1(void);
 void xframe2(void);
+
 void make(char t, int l, int s);
 
 int main(void)
@@ -19,13 +22,18 @@ int main(void)
 	printf("--------------------------------------------\n");
 	printf(" n : normal sudoku\n c : sudoku with sign of inequality\n x : sudoku X \n");
 	printf("--------------------------------------------\n");
+	
 	printf("input type : ");
 	scanf("%c", &t);
+	
 	printf("input level(1~10)\n");
 	scanf("%d", &l);
+	
 	printf("input size\n");
 	scanf("%d", &s);
+	
 	make(t, l, s);
+	
 	system("pause");
 	return 0;
 }
@@ -244,7 +252,9 @@ void make(char t, int l, int s)
 {
 	switch (tolower(t)) {
 	case 'n':
+		
 		switch (l) {
+		
 		case 1:
 			switch (s) {
 			case 9: nframe1(); break;
@@ -307,7 +317,9 @@ void make(char t, int l, int s)
 			}break;
 		default: main();
 		}break;
+			
 	case 'x':
+		
 		switch (l) {
 		case 1:
 			switch (s) {
@@ -371,7 +383,9 @@ void make(char t, int l, int s)
 			}break;
 		default: main();
 		}break;
+			
 	case 'c':
+		
 		switch (l) {
 		case 1:
 			switch (s) {
@@ -435,6 +449,7 @@ void make(char t, int l, int s)
 			}break;
 		default: main();
 		}break;
+			
 	default: main();
 	}
 }
