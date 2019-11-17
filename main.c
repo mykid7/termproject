@@ -299,7 +299,7 @@ void make(char t, int l, int s)
 			case 16: nframe2(); break;
 			default: main();
 			}break;
-		case 10: //sudoku10();
+		case 10:
 			switch (s) {
 			case 9: nframe1(); break;
 			case 16: nframe2(); break;
