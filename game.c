@@ -23,12 +23,12 @@ void make(char t, int l);
 
 int main(void)
 {
-	int l/*, k*/;
+	int l, k/*, f*/;
 	char t;
 	//FILE* fp;
-	double a[20];
+	//double a[20];
 	//int i, j, u;
-	double tmp;
+	//double tmp;
 
 	printf("--------------------------------------------\n");
 	printf(" n : normal sudoku\n c : sudoku with sign of inequality\n x : sudoku X \n");
@@ -42,15 +42,21 @@ int main(void)
 
 	make(t, l);
 	
-	/*fp = fopen("timetable.txt", "wt+");
-	for (k = 0; k < 20; k++)
+	/*fp = fopen("timetable.txt", "r");
+
+	fseek(fp, 0, SEEK_SET);
+	fseek(fp, 0, SEEK_END);
+	f = (ftell(fp)/sizeof(double))-1;
+
+	for (k = 0; k < f; k++)
 	{
 		fscanf(fp, "%lf", a[k]);
 	}
-	for (i = 0; i < 20; i++)
+
+	for (i = 0; i < f; i++)
 	{
 		u = i;
-		for (j = i + 1; j < 20; j++)
+		for (j = i + 1; j < f; j++)
 		{
 			if (a[u] > a[j])
 			{
@@ -61,12 +67,16 @@ int main(void)
 		a[i] = a[u];
 		a[u] = tmp;
 	}
-	for (k = 0; k < 20; k++)
+	fclose(fp);
+
+	fp = fopen("timetable.txt", "w");
+	for (k = 0; k < f; k++)
 	{
 		fprintf(fp, "%lf\n", a[k]);
 		printf("%d. %.3lf \n", k+1, a[k]);
 	}
-	fclose(fp);*/
+	fclose(fp);
+	*/
 	system("pause");
 	return 0;
 }
@@ -95,7 +105,6 @@ void nframe1(int l)
 
 
 	/*printf("--------------------");
-
 	for (i = 0; i < 9; i++)
 	{
 		for (j = 0; j < 9; j++)
@@ -104,7 +113,6 @@ void nframe1(int l)
 			if (j % 9 == 0) printf("\n");
 			printf("%d ", nsudoku1[i][j]);
 		}
-
 		if (i % 3 == 2) printf("\n--------------------");
 	}*/
 
@@ -145,13 +153,13 @@ void nframe1(int l)
 	start = clock();
 	while (cmd == 1)
 	{
-		printf("\n¼ıÀÚ¸¦ ÀÔ·ÂÇÒ À§Ä¡¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+		printf("\nìˆ«ìë¥¼ ì…ë ¥í•  ìœ„ì¹˜ë¥¼ ì„ íƒí•˜ì„¸ìš”");
 		scanf("%d %d", &a, &b);
 		for (t = 0; t < l + 6; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
-				printf("ÀÔ·ÂÇÒ ¼ıÀÚ´Â");
+				printf("ì…ë ¥í•  ìˆ«ìëŠ”");
 				scanf("%d", &n);
 				/*if (copy[a][0] != n && copy[a][1] != n && copy[a][2] != n && copy[a][3] != n && copy[a][4] != n && copy[a][5] != n && copy[a][6] != n && copy[a][7] != n && copy[a][8] != n)
 				{
@@ -186,7 +194,7 @@ void nframe1(int l)
 				if (nsudoku1[a][b] == n) copy[a][b] = n;
 				else
 				{
-					printf("°°Àº¼ıÀÚ°¡ ÀÖ¾î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+					printf("ê°™ì€ìˆ«ìê°€ ìˆì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 					break;
 				}
 
@@ -226,7 +234,7 @@ void nframe1(int l)
 	t1 = (double)(finish - start) / CLOCKS_PER_SEC;
 	printf("\nSolved time = %.3lf", t1);
 	fp = fopen("timetable.txt", "a+");
-	fprintf(fp,"%lf \n", t1);
+	fprintf(fp,"%lf", t1);
 	fclose(fp);
 }
 
@@ -253,7 +261,6 @@ void cframe1(int l)
 						   4, 8, 7,  5, 9, 2,  3, 6, 1 };
 
 	/*printf("----------------------------------------------");
-
 	for (i = 0; i < 9; i++)
 	{
 		if (i == 1) printf("\n%c%c  %c%c %c%c  %c%c  %c%c %c%c  %c%c  %c%c %c%c", 161,253, 161,253, 161,253, 161,252, 161,253, 161,252, 161,252, 161,252, 161,253);
@@ -262,7 +269,6 @@ void cframe1(int l)
         if (i == 5) printf("\n%c%c  %c%c %c%c  %c%c  %c%c %c%c  %c%c  %c%c %c%c", 161,253, 161,252, 161,252, 161,252, 161,253, 161,253, 161,253, 161,253, 161,252);
         if (i == 7) printf("\n%c%c  %c%c %c%c  %c%c  %c%c %c%c  %c%c  %c%c %c%c", 161,253, 161,253, 161,252, 161,253, 161,253, 161,253, 161,252, 161,252, 161,252);
         if (i == 8) printf("\n%c%c  %c%c %c%c  %c%c  %c%c %c%c  %c%c  %c%c %c%c", 161,252, 161,252, 161,252, 161,253, 161,252, 161,252, 161,253, 161,253, 161,253);
-
 		for (j = 0; j < 9; j++)
 		{
 			if (j % 3 == 0) printf(" ");
@@ -287,7 +293,6 @@ void cframe1(int l)
 			if (i == 8 && (j == 0 || j == 3 || j == 6)) printf("< ");
 			if (i == 8 && (j == 1 || j == 4 || j == 7)) printf("> ");
 		}
-
 		if (i % 3 == 2) printf("\n-----------------------------------------------");
 	}*/
 
@@ -353,13 +358,13 @@ void cframe1(int l)
 	start = clock();
 	while (cmd == 1)
 	{
-		printf("\n¼ıÀÚ¸¦ ÀÔ·ÂÇÒ À§Ä¡¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+		printf("\nìˆ«ìë¥¼ ì…ë ¥í•  ìœ„ì¹˜ë¥¼ ì„ íƒí•˜ì„¸ìš”");
 		scanf("%d %d", &a, &b);
 		for (t = 0; t < l + 6; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
-				printf("ÀÔ·ÂÇÒ ¼ıÀÚ´Â");
+				printf("ì…ë ¥í•  ìˆ«ìëŠ”");
 				scanf("%d", &n);
 				/*if (copy[a][0] != n && copy[a][1] != n && copy[a][2] != n && copy[a][3] != n && copy[a][4] != n && copy[a][5] != n && copy[a][6] != n && copy[a][7] != n && copy[a][8] != n)
 				{
@@ -394,7 +399,7 @@ void cframe1(int l)
 				if (csudoku1[a][b] == n) copy[a][b] = n;
 				else
 				{
-					printf("°°Àº¼ıÀÚ°¡ ÀÖ¾î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+					printf("ê°™ì€ìˆ«ìê°€ ìˆì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 					break;
 				}
 
@@ -459,7 +464,7 @@ void cframe1(int l)
 	t1 = (double)(finish - start) / CLOCKS_PER_SEC;
 	printf("\nSolved time = %.3lf", t1);
 	fp = fopen("timetable.txt", "a+");
-	fprintf(fp, "%lf \n", t1);
+	fprintf(fp, "%lf", t1);
 	fclose(fp);
 }
 
@@ -486,7 +491,6 @@ void xframe1(int l)
 						   1, 8, 2,  3, 5, 9,  6, 4, 7 };
 
 	/*printf("--------------------");
-
 	for (i = 0; i < 9; i++)
 	{
 		for (j = 0; j < 9; j++)
@@ -495,7 +499,6 @@ void xframe1(int l)
 			if (j % 9 == 0) printf("\n");
 			printf("%d ", xsudoku1[i][j]);
 		}
-
 		if (i % 3 == 2) printf("\n--------------------");
 	}*/
 
@@ -536,13 +539,13 @@ void xframe1(int l)
 	start = clock();
 	while (cmd == 1)
 	{
-		printf("\n¼ıÀÚ¸¦ ÀÔ·ÂÇÒ À§Ä¡¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+		printf("\nìˆ«ìë¥¼ ì…ë ¥í•  ìœ„ì¹˜ë¥¼ ì„ íƒí•˜ì„¸ìš”");
 		scanf("%d %d", &a, &b);
 		for (t = 0; t < l + 6; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
-				printf("ÀÔ·ÂÇÒ ¼ıÀÚ´Â");
+				printf("ì…ë ¥í•  ìˆ«ìëŠ”");
 				scanf("%d", &n);
 				/*if (copy[a][0] != n && copy[a][1] != n && copy[a][2] != n && copy[a][3] != n && copy[a][4] != n && copy[a][5] != n && copy[a][6] != n && copy[a][7] != n && copy[a][8] != n)
 				{
@@ -577,7 +580,7 @@ void xframe1(int l)
 				if (xsudoku1[a][b] == n) copy[a][b] = n;
 				else
 				{
-					printf("°°Àº¼ıÀÚ°¡ ÀÖ¾î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+					printf("ê°™ì€ìˆ«ìê°€ ìˆì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 					break;
 				}
 
@@ -617,7 +620,7 @@ void xframe1(int l)
 	t1 = (double)(finish - start) / CLOCKS_PER_SEC;
 	printf("\nSolved time = %.3lf", t1);
 	fp = fopen("timetable.txt", "a+");
-	fprintf(fp, "%lf \n", t1);
+	fprintf(fp, "%lf", t1);
 	fclose(fp);
 }
 
@@ -652,7 +655,6 @@ void nframe2(int l)
                              2, 8, 15, 3,		5, 11, 9, 1,		12, 13, 16, 4,  	14, 10, 6, 7 };
 
 	/*printf("\n-------------------------------------------------------------");
-
 	for (i = 0; i < 16; i++)
 	{
 		for (j = 0; j < 16; j++)
@@ -661,7 +663,6 @@ void nframe2(int l)
 			if (j % 16 == 0) printf("\n");
 			printf("%2d ", nsudoku2[i][j]);
 		}
-
 		if (i % 4 == 3) printf("\n-------------------------------------------------------------");
 	}*/
 
@@ -702,13 +703,13 @@ void nframe2(int l)
 	start = clock();
 	while (cmd == 1)
 	{
-		printf("\n¼ıÀÚ¸¦ ÀÔ·ÂÇÒ À§Ä¡¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+		printf("\nìˆ«ìë¥¼ ì…ë ¥í•  ìœ„ì¹˜ë¥¼ ì„ íƒí•˜ì„¸ìš”");
 		scanf("%d %d", &a, &b);
 		for (t = 0; t < l + 6; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
-				printf("ÀÔ·ÂÇÒ ¼ıÀÚ´Â");
+				printf("ì…ë ¥í•  ìˆ«ìëŠ”");
 				scanf("%d", &n);
 				/*if (copy[a][0] != n && copy[a][1] != n && copy[a][2] != n && copy[a][3] != n && copy[a][4] != n && copy[a][5] != n && copy[a][6] != n && copy[a][7] != n && copy[a][8] != n)
 				{
@@ -743,7 +744,7 @@ void nframe2(int l)
 				if (nsudoku2[a][b] == n) copy[a][b] = n;
 				else
 				{
-					printf("°°Àº¼ıÀÚ°¡ ÀÖ¾î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+					printf("ê°™ì€ìˆ«ìê°€ ìˆì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 					break;
 				}
 
@@ -783,36 +784,30 @@ void nframe2(int l)
 	t1 = (double)(finish - start) / CLOCKS_PER_SEC;
 	printf("\nSolved time = %.3lf", t1);
 	fp = fopen("timetable.txt", "a+");
-	fprintf(fp, "%lf \n", t1);
+	fprintf(fp, "%lf", t1);
 	fclose(fp);
 }
 
 /*void cframe2(void)
 {
 	int i, j;
-
 	int csudoku2[16][16] = { 9, 1, 6, 10,		7, 4, 2, 14,		3, 11, 5, 12,		15, 16, 8, 13,
                              13, 15, 16, 7, 	11, 5, 10, 3,		6, 2, 8, 1,			9, 4, 12, 14,
                              5, 2, 14, 12,		8, 1, 13, 9,		16, 15, 4, 7,		10, 11, 3, 6,
                              4, 11, 3, 8,		16, 6, 12, 15,	    14, 9, 10, 13,	    7, 2, 5, 1,
-
                              15, 16, 7, 9,		14, 8, 3, 4,		11, 10, 2, 6,		13, 12, 1, 5,
                              12, 14, 5, 6,		13, 2, 1, 11,		4, 8, 15, 9,		3, 7, 16, 10,
                              11, 3, 10, 13, 	9, 12, 15, 7,		1, 5, 14, 16,		4, 6, 2, 8,
                              1, 4, 8, 2,		10, 16, 5, 6,		13, 12, 7, 3,		11, 14, 15, 9,
-
                              14, 13, 2, 16, 	3, 10, 11, 12,  	8, 6, 9, 15,		1, 5, 7, 4,
                              8, 6, 12, 15,		1, 9, 14, 5,		7, 4, 3, 2,			16, 13, 10, 11,
                              7, 10, 4, 11,		2, 15, 16, 8,		5, 1, 13, 14,		6, 3, 9, 12,
                              3, 9, 1, 5,		6, 7, 4, 13,    	10, 16, 12, 11, 	2, 8, 14, 15,
-
                              6, 7, 11, 4,		12, 3, 8, 16,		9, 14, 1, 10,		5, 15, 13, 2,
                              16, 5, 13, 1,		15, 14, 6, 10,  	2, 7, 11, 8,		12, 9, 4, 3,
                              10, 12, 9, 14, 	4, 13, 7, 2,		15, 3, 6, 5,		8, 1, 11, 16,
                              2, 8, 15, 3,		5, 11, 9, 1,		12, 13, 16, 4,  	14, 10, 6, 7 };
-
 	printf("\n-----------------------------------------------------------------------------");
-
 	for (i = 0; i < 16; i++)
 	{
 		for (j = 0; j < 16; j++)
@@ -821,7 +816,6 @@ void nframe2(int l)
 			if (j % 16 == 0) printf("\n");
 			printf("%2d | ", csudoku2[i][j]);
 		}
-
 		if (i % 4 == 3) printf("\n-----------------------------------------------------------------------");
 	}
 }*/
@@ -829,29 +823,23 @@ void nframe2(int l)
 /*void xframe2(void)
 {
 	int i, j;
-
 	int xsudoku2[16][16] = { 9, 1, 6, 10,		7, 4, 2, 14,		3, 11, 5, 12,		15, 16, 8, 13,
                              13, 15, 16, 7, 	11, 5, 10, 3,		6, 2, 8, 1,			9, 4, 12, 14,
                              5, 2, 14, 12,		8, 1, 13, 9,		16, 15, 4, 7,		10, 11, 3, 6,
                              4, 11, 3, 8,		16, 6, 12, 15,	    14, 9, 10, 13,	    7, 2, 5, 1,
-
                              15, 16, 7, 9,		14, 8, 3, 4,		11, 10, 2, 6,		13, 12, 1, 5,
                              12, 14, 5, 6,		13, 2, 1, 11,		4, 8, 15, 9,		3, 7, 16, 10,
                              11, 3, 10, 13, 	9, 12, 15, 7,		1, 5, 14, 16,		4, 6, 2, 8,
                              1, 4, 8, 2,		10, 16, 5, 6,		13, 12, 7, 3,		11, 14, 15, 9,
-
                              14, 13, 2, 16, 	3, 10, 11, 12,  	8, 6, 9, 15,		1, 5, 7, 4,
                              8, 6, 12, 15,		1, 9, 14, 5,		7, 4, 3, 2,			16, 13, 10, 11,
                              7, 10, 4, 11,		2, 15, 16, 8,		5, 1, 13, 14,		6, 3, 9, 12,
                              3, 9, 1, 5,		6, 7, 4, 13,    	10, 16, 12, 11, 	2, 8, 14, 15,
-
                              6, 7, 11, 4,		12, 3, 8, 16,		9, 14, 1, 10,		5, 15, 13, 2,
                              16, 5, 13, 1,		15, 14, 6, 10,  	2, 7, 11, 8,		12, 9, 4, 3,
                              10, 12, 9, 14, 	4, 13, 7, 2,		15, 3, 6, 5,		8, 1, 11, 16,
                              2, 8, 15, 3,		5, 11, 9, 1,		12, 13, 16, 4,  	14, 10, 6, 7 };
-
 	printf("\n------------------------------------------------------------------------");
-
 	for (i = 0; i < 16; i++)
 	{
 		for (j = 0; j < 16; j++)
@@ -860,7 +848,6 @@ void nframe2(int l)
 			if (j % 16 == 0) printf("\n");
 			printf("%2d | ", xsudoku2[i][j]);
 		}
-
 		if (i % 4 == 3) printf("\n----------------------------------------------------------------------------");
 	}
 }*/
@@ -926,7 +913,6 @@ void make(char t, int l)
 /*void level(int l)
 {
 	int a, b, i, j, t;
-
 	for (t = 0; t < l+6; t++)
 	{
 		srand((int)time(NULL));
@@ -936,9 +922,7 @@ void make(char t, int l)
 		if (copy[a][b] != 0) copy[a][b] = 0;
 		else t--;
 	}
-
 	printf("--------------------");
-
 	for (i = 0; i < 9; i++)
 	{
 		for (j = 0; j < 9; j++)
@@ -947,7 +931,6 @@ void make(char t, int l)
 			if (j % 9 == 0) printf("\n");
 			printf("%d ", copy[i][j]);
 		}
-
 		if (i % 3 == 2) printf("\n--------------------");
 	}
 }*/
