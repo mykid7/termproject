@@ -94,13 +94,13 @@ void nframe1(int l)
 	start = clock();
 	while (cmd == 1)
 	{
-		printf("\n¼ıÀÚ¸¦ ÀÔ·ÂÇÒ À§Ä¡¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+		printf("\nìˆ«ìë¥¼ ì…ë ¥í•  ìœ„ì¹˜ë¥¼ ì„ íƒí•˜ì„¸ìš”");
 		scanf("%d %d", &a, &b);
 		for (t = 0; t < l + 6; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
-				printf("ÀÔ·ÂÇÒ ¼ıÀÚ´Â");
+				printf("ì…ë ¥í•  ìˆ«ìëŠ”");
 				scanf("%d", &n);
 				/*if (copy[a][0] != n && copy[a][1] != n && copy[a][2] != n && copy[a][3] != n && copy[a][4] != n && copy[a][5] != n && copy[a][6] != n && copy[a][7] != n && copy[a][8] != n)
 				{
@@ -135,7 +135,7 @@ void nframe1(int l)
 				if (nsudoku1[a][b] == n) copy[a][b] = n;
 				else
 				{
-					printf("°°Àº¼ıÀÚ°¡ ÀÖ¾î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+					printf("ê°™ì€ìˆ«ìê°€ ìˆì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 					break;
 				}
 
@@ -264,19 +264,19 @@ void cframe1(int l)
 	start = clock();
 	while (cmd == 1)
 	{
-		printf("\n¼ıÀÚ¸¦ ÀÔ·ÂÇÒ À§Ä¡¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+		printf("\nìˆ«ìë¥¼ ì…ë ¥í•  ìœ„ì¹˜ë¥¼ ì„ íƒí•˜ì„¸ìš”");
 		scanf("%d %d", &a, &b);
 		for (t = 0; t < l + 6; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
-				printf("ÀÔ·ÂÇÒ ¼ıÀÚ´Â");
+				printf("ì…ë ¥í•  ìˆ«ìëŠ”");
 				scanf("%d", &n);
 				
 				if (csudoku1[a][b] == n) copy[a][b] = n;
 				else
 				{
-					printf("°°Àº¼ıÀÚ°¡ ÀÖ¾î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+					printf("ê°™ì€ìˆ«ìê°€ ìˆì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 					break;
 				}
 
@@ -405,19 +405,19 @@ void xframe1(int l)
 	start = clock();
 	while (cmd == 1)
 	{
-		printf("\n¼ıÀÚ¸¦ ÀÔ·ÂÇÒ À§Ä¡¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+		printf("\nìˆ«ìë¥¼ ì…ë ¥í•  ìœ„ì¹˜ë¥¼ ì„ íƒí•˜ì„¸ìš”");
 		scanf("%d %d", &a, &b);
 		for (t = 0; t < l + 6; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
-				printf("ÀÔ·ÂÇÒ ¼ıÀÚ´Â");
+				printf("ì…ë ¥í•  ìˆ«ìëŠ”");
 				scanf("%d", &n);
 				
 				if (xsudoku1[a][b] == n) copy[a][b] = n;
 				else
 				{
-					printf("°°Àº¼ıÀÚ°¡ ÀÖ¾î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+					printf("ê°™ì€ìˆ«ìê°€ ìˆì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 					break;
 				}
 
@@ -529,19 +529,19 @@ void nframe2(int l)
 	start = clock();
 	while (cmd == 1)
 	{
-		printf("\n¼ıÀÚ¸¦ ÀÔ·ÂÇÒ À§Ä¡¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+		printf("\nìˆ«ìë¥¼ ì…ë ¥í•  ìœ„ì¹˜ë¥¼ ì„ íƒí•˜ì„¸ìš”");
 		scanf("%d %d", &a, &b);
 		for (t = 0; t < l + 6; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
-				printf("ÀÔ·ÂÇÒ ¼ıÀÚ´Â");
+				printf("ì…ë ¥í•  ìˆ«ìëŠ”");
 				scanf("%d", &n);
 				
 				if (nsudoku2[a][b] == n) copy[a][b] = n;
 				else
 				{
-					printf("°°Àº¼ıÀÚ°¡ ÀÖ¾î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+					printf("ê°™ì€ìˆ«ìê°€ ìˆì–´ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 					break;
 				}
 
@@ -616,7 +616,7 @@ void make(char t, int l)
 	
 	default:
 		{
-			printf("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
+			printf("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
 			main();
 		}
 	}
