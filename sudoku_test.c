@@ -69,7 +69,7 @@ void nframe1(int l)
 		}
 	}
 
-	for (t = 0; t < l + 6; t++)
+	for (t = 0; t < l; t++)
 	{
 		srand((int)time(NULL));
 		a = (rand() % 9);
@@ -100,7 +100,7 @@ void nframe1(int l)
 	{
 		printf("\n숫자를 입력할 위치를 선택하세요(행(0~8) 열(0~8)) : ");
 		scanf("%d %d", &a, &b);
-		for (t = 0; t < l + 6; t++)
+		for (t = 0; t < l; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
@@ -214,7 +214,7 @@ void cframe1(int l)
 		}
 	}
 
-	for (t = 0; t < l + 6; t++)
+	for (t = 0; t < l; t++)
 	{
 		srand((int)time(NULL));
 		a = (rand() % 9);
@@ -270,7 +270,7 @@ void cframe1(int l)
 	{
 		printf("\n숫자를 입력할 위치를 선택하세요(행(0~8) 열(0~8)) : ");
 		scanf("%d %d", &a, &b);
-		for (t = 0; t < l + 6; t++)
+		for (t = 0; t < l; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
@@ -380,7 +380,7 @@ void xframe1(int l)
 		}
 	}
 
-	for (t = 0; t < l + 6; t++)
+	for (t = 0; t < l; t++)
 	{
 		srand((int)time(NULL));
 		a = (rand() % 9);
@@ -411,7 +411,7 @@ void xframe1(int l)
 	{
 		printf("\n숫자를 입력할 위치를 선택하세요(행(0~8) 열(0~8)) : ");
 		scanf("%d %d", &a, &b);
-		for (t = 0; t < l + 6; t++)
+		for (t = 0; t < l; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
@@ -504,7 +504,7 @@ void nframe2(int l)
 		}
 	}
 
-	for (t = 0; t < l + 6; t++)
+	for (t = 0; t < l; t++)
 	{
 		srand((int)time(NULL));
 		a = (rand() % 16);
@@ -535,7 +535,7 @@ void nframe2(int l)
 	{
 		printf("\n숫자를 입력할 위치를 선택하세요(행(0~15) 열(0~15)) : ");
 		scanf("%d %d", &a, &b);
-		for (t = 0; t < l + 6; t++)
+		for (t = 0; t < l; t++)
 		{
 			if (a == point[t][0] && b == point[t][1])
 			{
