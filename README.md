@@ -14,3 +14,6 @@
 
 # SOURCE CODE
 https://github.com/mykid7/termproject/blob/master/sudoku_final.c
+
+# EXE FILE
+https://github.com/mykid7/termproject/blob/master/%EC%8A%A4%EB%8F%84%EC%BF%A0.exe
