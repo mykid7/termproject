@@ -11,3 +11,6 @@
 스도쿠의 X자 모양의 대각선 속에서도 1에서 9까지의 숫자를 한 번씩만 사용할 수 있다.
 # 빅스도쿠(점보스도쿠)
 4X4 모양 네모칸에 1에서 16까지의 숫자가 들어가는 대형 스도쿠다. 푸는 방법은 일반 스도쿠와 동일하다.
+
+# SOURCE CODE
+https://github.com/mykid7/termproject/blob/master/sudoku_final.c
